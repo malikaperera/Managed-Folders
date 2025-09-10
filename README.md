@@ -2,31 +2,31 @@
 Manage-Zips.ps1 automates ZIP archive handling: it scans a directory (default: current folder), checks for matching .zip/folder pairs, moves coexisting zips to ./Done, extracts zips without folders then moves them to Done, and leaves unzipped-only folders untouched. Supports optional -SourceDir and -DoneDir parameters.
 
 
-Features
+# Features
 - Detects Coexisting items (both Name.zip and Name\) and moves the .zip to Done/.
 - Finds ZippedOnly items (only Name.zip), extracts them, then moves the archive to Done/.
 - Leaves UnzippedOnly folders untouched.
 - Default behavior works in the script’s own folder—no parameters required.
 - Safe by default: checks before unzipping or moving, and won’t overwrite existing files.
 
-Prerequisites
+# Prerequisites
 - Windows PowerShell 5.0 or later
 - Execution policy allowing script execution (e.g. RemoteSigned or use the Bypass flag)
 
-Installation
+# Installation
 - Clone or download this repo.
 - Place Manage-Zips.ps1 wherever you want to run it.
 
-Usage
+# Usage
 From the folder containing Manage-Zips.ps1:
-# Default: scans current directory, moves zips to ./Done
+Default: scans current directory, moves zips to ./Done
 .\Manage-Zips.ps1
 
-# Custom source directory and custom Done folder name
+Custom source directory and custom Done folder name
 .\Manage-Zips.ps1 -SourceDir 'F:\Music\2025\House' -DoneDir 'Processed'
 
 
-How It Works
+# How It Works
 - Setup
 - Ensures DoneDir exists.
 - Loads Expand-Archive if necessary.
